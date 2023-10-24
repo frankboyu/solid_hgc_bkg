@@ -1,0 +1,38 @@
+hgc_background
+
+Description:
+Pattern recognition study to supress the background in the SoLID heavy gas Cherenkov (HGC) detector at JLab Hall A
+
+Usage:
+1. Directory on Duke physics server: >> cd /var/phy/project/mepg/by51/hgc_background
+2. Install the needed python packages: >> pip install opencv-python scikit-learn tensorflow
+3. Open the code in Jupyter notebook: >> jupyter notebook
+
+
+
+
+
+
+
+
+solid hgc signal file
+output_pim	           			pi- z (-350,-330)cm, 2.5-7.5GeV,theta 7.5-14.5deg phi all, field on
+
+solid hgc background file
+farm_solid_SIDIS_He3_moved_BeamOnTarget_0.561e10_skim_HGCwinCF1
+
+=====================================
+background events with with Npe>0 in hgc
+
+SoLID SIDIS He3 run use 15uA beam
+So there 15e-6/1.6e-19*50e-9=4.7e6 e- within 50ns time window
+
+farm_solid_SIDIS_He3_moved_BeamOnTarget_0.561e10_skim_HGCwinCF1_pixel_matrix.ml
+has 8800 good events from 0.561e10 beam e-
+It's 0.561e10/4.7e6=1194 of 50ns time window
+8800/1194=8
+So for 1 signal event, you want to add 8 background events together into a single background event.
+out of 8800 events, you can randomly select 8 to produce many merged background events
+
+You can change 8 to 4 or 16 or different number so we know how algorithm can handle different level of background 
+=====================================
